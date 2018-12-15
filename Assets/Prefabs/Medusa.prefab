@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8033289130050002412}
   - component: {fileID: 8033289130050002413}
   - component: {fileID: 8033289130050002410}
+  - component: {fileID: 251702129}
   m_Layer: 0
   m_Name: Medusa
   m_TagString: Untagged
@@ -106,3 +107,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &251702129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033289130050002411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c49d2953e872fa4d8af340e6f3e306a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {x: 0, y: 0, z: 0}
+  - {x: -3.14, y: 0, z: 0}
+  speed: 1.5
+  circleRadius: 0.5
