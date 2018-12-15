@@ -21,4 +21,9 @@ public class PlayerMovement : MonoBehaviour
         Vector2 goalSpeed = direction * this.movementSpeed * Time.deltaTime; 
         rigidbody2D.velocity = goalSpeed;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collided");
+    }
 }
