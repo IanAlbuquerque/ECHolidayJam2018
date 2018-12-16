@@ -9,13 +9,15 @@ public class Gifts : MonoBehaviour
 {
     public enum Buffs {
         moreLife,
-        moreSpeed
+        moreSpeed,
+        dealMoreDamage
 
     }
 
     public enum Debuffs {
         lessLife,
         lessSpeed,
+        takeMoreDamage,
         newEnemy
     }
 
