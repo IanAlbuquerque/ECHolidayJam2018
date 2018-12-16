@@ -375,10 +375,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -394,9 +394,9 @@ Canvas:
   m_GameObject: {fileID: 268011045}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -693,12 +693,12 @@ PrefabInstance:
     - target: {fileID: 1975668857473177538, guid: 54e8fddbd1bb288419dc2e578843fcf1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15
+      value: -17.415
       objectReference: {fileID: 0}
     - target: {fileID: 1975668857473177538, guid: 54e8fddbd1bb288419dc2e578843fcf1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -337
+      value: -381
       objectReference: {fileID: 0}
     - target: {fileID: 1975668857473177538, guid: 54e8fddbd1bb288419dc2e578843fcf1,
         type: 3}
@@ -1640,12 +1640,12 @@ PrefabInstance:
     - target: {fileID: 3538302722978412009, guid: b91fea7412296ac419df63ccc7aef27f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 219
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 3538302722978412009, guid: b91fea7412296ac419df63ccc7aef27f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -61
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 3538302722978412009, guid: b91fea7412296ac419df63ccc7aef27f,
         type: 3}
