@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour
             if (collider.CompareTag("Player"))
             {
                 Destroy(gameObject);
-                //PlayerHealth.Instance.ReduceHP(1);
+                PlayerHealth.Instance.ReduceHP(1);
 
             }
         }

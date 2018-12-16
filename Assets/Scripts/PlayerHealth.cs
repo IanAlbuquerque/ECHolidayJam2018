@@ -20,17 +20,15 @@ public class PlayerHealth : MonoBehaviour
     //==========End singleton stuff==========
 
     public int hp = 3;
-    public GameManager GM;
     
     public void ReduceHP(int amount)
     {
         hp -= amount;
 
-        Debug.Log(hp);
-
-        if(hp == 0)
+        if(hp <= 0)
         {
-            GM.EndGame();
+            Debug.Log(hp);
+            GameManager.instance.EndGame();
         }
     }
 }

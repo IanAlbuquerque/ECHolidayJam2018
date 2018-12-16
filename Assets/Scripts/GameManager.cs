@@ -27,6 +27,6 @@ public class GameManager : MonoBehaviour
 
         Destroy(player);
 
-        //Invoke(SceneManager.GetActiveScene(), 4);
+        Invoke(SceneManager.GetActiveScene().ToString(), 4);
     }
 }

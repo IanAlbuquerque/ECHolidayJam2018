@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4876883966210312805}
   - component: {fileID: 4876883966210312801}
   - component: {fileID: 4876883966210312800}
+  - component: {fileID: 366892931581869305}
   - component: {fileID: 4876883966210312806}
   - component: {fileID: 4876883966210312807}
   - component: {fileID: 1082041752}
@@ -112,6 +113,21 @@ MonoBehaviour:
   arrowPrefab: {fileID: 2817663984797730576, guid: bd54da11acba8214e9d4d23e7340493c,
     type: 3}
   fireRate: 0.2
+  shotOffset: {x: 0, y: -0.1, z: 0}
+--- !u!114 &366892931581869305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876883966210312810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d22e071ec2581547b0956b8c225a90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 3
+  GM: {fileID: 0}
 --- !u!50 &4876883966210312806
 Rigidbody2D:
   serializedVersion: 4
