@@ -9,7 +9,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Start()
     {
-        fireRate = 1;
+        
     }
 
     void Update()

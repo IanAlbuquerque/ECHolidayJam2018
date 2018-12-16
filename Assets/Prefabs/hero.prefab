@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1900948e92028a74a83bab656fd813ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 500
+  movementSpeed: 100
 --- !u!114 &4876883966210312800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 2817663984797730576, guid: bd54da11acba8214e9d4d23e7340493c,
     type: 3}
-  fireRate: 0
+  fireRate: 0.2
 --- !u!50 &4876883966210312806
 Rigidbody2D:
   serializedVersion: 4

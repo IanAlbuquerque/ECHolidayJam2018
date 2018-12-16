@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82629c87fd19132429d0cffcf9aad3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {x: 0, y: 0, z: 0}
-  radius: 3
+  point: {x: 0.9, y: 0, z: 0}
+  radius: 0.58
   angularSpeed: 1
 --- !u!95 &3157898478559505415
 Animator:
