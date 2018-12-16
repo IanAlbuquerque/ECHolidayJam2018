@@ -20,10 +20,13 @@ public class PlayerHealth : MonoBehaviour
     //==========End singleton stuff==========
 
     public int hp = 3;
+    public PlayerHealthContainer hpContainer;
     
     public void ReduceHP(int amount)
     {
         hp -= amount;
+
+        hpContainer.DestroyHeart();
 
         if(hp <= 0)
         {
