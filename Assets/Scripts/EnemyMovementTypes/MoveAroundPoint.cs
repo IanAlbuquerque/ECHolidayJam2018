@@ -36,7 +36,7 @@ public class MoveAroundPoint : MonoBehaviour
     void UpdateAngle(){
         curAngle += angularSpeed * Time.deltaTime;
 
-        if(curAngle >= 360) curAngle -= 360;
+        if(curAngle >= 2*Mathf.PI) curAngle -= 2*Mathf.PI;
     }
 
     /// <summary>
