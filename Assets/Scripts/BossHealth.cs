@@ -27,7 +27,6 @@ public class BossHealth : MonoBehaviour
     public void ReduceHealth(float amount)
     {
         hp -= amount;
-        Debug.Log(hp / maxHp);
         bossHealthBar.transform.GetChild(1).GetComponent<Image>().fillAmount = hp / maxHp;
 
         if (hp <= 0)
@@ -43,5 +42,6 @@ public class BossHealth : MonoBehaviour
     {
         this.maxHp = maxHp;
         hp = maxHp;
+        bossHealthBar.transform.GetChild(1).GetComponent<Image>().fillAmount = hp / maxHp;
     }
 }
