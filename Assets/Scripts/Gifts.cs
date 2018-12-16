@@ -159,10 +159,13 @@ public class Gifts : MonoBehaviour
     public void Choose(Button btn){
         ApplyBuff(choiceBuffs[btn]);
         ApplyDebuff(choiceDebuffs[btn]);
-        SceneManager.LoadScene("medusa");
+
+        GameManager.instance.SpawnNextBoss();
+
+        transform.parent.gameObject.SetActive(false);
     }
 
-    public void Start(){
+    public void OnEnable(){
         GenerateChoices();
     }
 }

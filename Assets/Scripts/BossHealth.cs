@@ -8,7 +8,6 @@ public class BossHealth : MonoBehaviour
     public float hp;    // Must be a float so as to display the health bar correctly
     public float maxHp;
     public GameObject bossHealthBar;
-    public GameObject currentBoss;
 
     //===========Singleton stuff===========
     public static BossHealth Instance { get; private set; }
@@ -32,18 +31,17 @@ public class BossHealth : MonoBehaviour
         bossHealthBar.transform.GetChild(1).GetComponent<Image>().fillAmount = hp / maxHp;
 
         if (hp <= 0)
-        {
-            Destroy(currentBoss);
-            /*
-            Chama a tela de presentes             
-            */
-            /*PlayerHealth.Instance.RegenerateHp(5);
-            GameManager.instance.GetNextBoss();
-            maxHp = GameManager.instance.GetCurrentBossHP();
+        { 
 
-            hp = maxHp;*/
+            GameManager.instance.DefeatBoss();
+
+            hp = maxHp;
         }
     }
 
-
+    public void SetBossMaxHP(float maxHp)
+    {
+        this.maxHp = maxHp;
+        hp = maxHp;
+    }
 }
