@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 8033289130050002412}
   - component: {fileID: 8033289130050002413}
   - component: {fileID: 8033289130050002410}
-  - component: {fileID: 222259154}
-  - component: {fileID: 251702129}
   - component: {fileID: 351426218426187252}
   - component: {fileID: 1882160380965500076}
+  - component: {fileID: 222259154}
+  - component: {fileID: 222259155}
   m_Layer: 0
-  m_Name: Medusa
+  m_Name: medusa
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,38 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32793963, y: 0.14740139}
   m_EdgeRadius: 0
---- !u!114 &222259154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8033289130050002411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef0079ab772c7944b588ac2294cc9bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  medusaShot: {fileID: 2817663984797730576, guid: 1c92ae4b4eebec64c8dabf1cc0653714,
-    type: 3}
-  shootingCooldown: 1
-  offset: {x: -0.5, y: 0, z: 0}
---- !u!114 &251702129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8033289130050002411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c49d2953e872fa4d8af340e6f3e306a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {x: 1.21, y: -0.3, z: 0}
-  speed: 1.5
-  circleRadius: 0.1
 --- !u!95 &351426218426187252
 Animator:
   serializedVersion: 3
@@ -182,3 +150,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &222259154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033289130050002411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b1af8cefe36824fac2e72520ea3106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalProjectilePrefab: {fileID: 2817663984797730576, guid: 1c92ae4b4eebec64c8dabf1cc0653714,
+    type: 3}
+  waypoints:
+  - {x: 3.6, y: 1.09}
+  - {x: 2.43, y: -0.15}
+  - {x: 3.6, y: -1.5}
+  speed: 0.5
+  circleRadius: 0.1
+  shootCooldown: 0.3
+  projectileSpeed: 1
+--- !u!114 &222259155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033289130050002411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48bff92361362449a00418ad9a062e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
