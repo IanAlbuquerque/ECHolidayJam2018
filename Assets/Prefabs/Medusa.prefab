@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1882160380965500076}
   - component: {fileID: 222259154}
   - component: {fileID: 9200420474693982023}
+  - component: {fileID: 7238008214035265244}
   - component: {fileID: 222259155}
   m_Layer: 0
   m_Name: medusa
@@ -167,8 +168,8 @@ MonoBehaviour:
     type: 3}
   waypoints:
   - {x: 3.6, y: 1.09}
-  - {x: 2.43, y: -0.15}
-  - {x: 3.6, y: -1.5}
+  - {x: 2.43, y: 0}
+  - {x: 3.6, y: -1.09}
   speed: 0.5
   circleRadius: 0.1
   shootCooldown: 0.3
@@ -196,10 +197,36 @@ MonoBehaviour:
   explosionDuration: 2
   explosionChildCooldown: 0.3
   numDirections: 10
-  standingPosition: {x: 4.8, y: 0}
+  standingPosition: {x: 3.6, y: 0}
   speed: 0.5
   circleRadius: 0.2
   shootCooldown: 3
+--- !u!114 &7238008214035265244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033289130050002411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c265e640eb18e4d9c2cf0a9176e43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gasProjectilePrefab: {fileID: 2817663984797730576, guid: f7e7e7aaea269f246829dd43f736bc7e,
+    type: 3}
+  directionalProjectilePrefab: {fileID: 2817663984797730576, guid: 1c92ae4b4eebec64c8dabf1cc0653714,
+    type: 3}
+  waypoints:
+  - {x: 3.6, y: 1.09}
+  - {x: 2.43, y: 0}
+  - {x: 3.6, y: -1.09}
+  speed: 0.5
+  circleRadius: 0.1
+  shootCooldown: 0.3
+  projectileSpeed: 1
+  gasCooldown: 5
+  gasSpeed: 2
 --- !u!114 &222259155
 MonoBehaviour:
   m_ObjectHideFlags: 0

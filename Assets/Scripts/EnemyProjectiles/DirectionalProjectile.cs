@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DirectionalProjectile : MonoBehaviour
 {
+    public bool shouldFlip = true;
     Rigidbody2D rb;
     public Vector2 direction;
     public float speed;
@@ -20,8 +21,10 @@ public class DirectionalProjectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        float angle = Mathf.Atan2(this.direction.y, this.direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        if(this.shouldFlip) {
+            float angle = Mathf.Atan2(this.direction.y, this.direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
         this.timeElapsed += Time.fixedDeltaTime;
         rb.MovePosition(rb.position + direction.normalized * this.speed * Time.fixedDeltaTime);
     }

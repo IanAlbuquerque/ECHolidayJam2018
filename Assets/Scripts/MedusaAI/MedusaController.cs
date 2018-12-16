@@ -11,6 +11,8 @@ public class MedusaController : MonoBehaviour
     private int currentPattern = 0;
 
     public void Start() {
+        this.patterns.Add(this.GetComponent<MedusaWanderWithGas>());
+        this.durations.Add(20.0f);
         this.patterns.Add(this.GetComponent<MedusaWander>());
         this.durations.Add(20.0f);
         this.patterns.Add(this.GetComponent<MedusaFirework>());
