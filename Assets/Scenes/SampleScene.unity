@@ -112,6 +112,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &222259153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8033289130050002411, guid: 283519c6a325a2a458b6ccb3a37618a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1435671548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &222259154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222259153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef0079ab772c7944b588ac2294cc9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medusaShot: {fileID: 2817663984797730576, guid: 1c92ae4b4eebec64c8dabf1cc0653714,
+    type: 3}
+  shootingCooldown: 0.05
+  offset: {x: -0.5, y: 0, z: 0}
 --- !u!1 &227807838
 GameObject:
   m_ObjectHideFlags: 0

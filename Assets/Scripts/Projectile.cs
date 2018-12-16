@@ -8,21 +8,28 @@ public class Projectile : MonoBehaviour
     public Vector2 velocity;
     private string shotPattern;  //Recieved from the shot prefab this script is currently attached to
 
+    private Vector2 startingPosition;
+    private float timeElapsed;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        this.startingPosition = new Vector2(this.transform.position.x, this.transform.position.y);
+        this.timeElapsed = 0;
     }
 
     void FixedUpdate()
     { 
+        this.timeElapsed += Time.fixedDeltaTime;
         if(shotPattern == "Player")
         {
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         }
         else if(shotPattern == "Medusa")
         {
-            //Vector2 movement = new Vector2(rb.position.x, rb.position.x * rb.position.x);
-            rb.MovePosition(rb.position /*+ movement*/+ velocity);
+            Vector2 targetPosition = new Vector2(this.startingPosition.x + velocity.x * this.timeElapsed,
+                                                 this.startingPosition.y + velocity.y * Mathf.Sin(velocity.x * 5 * this.timeElapsed));
+            rb.MovePosition(targetPosition);
         }
     }
 
@@ -39,7 +46,7 @@ public class Projectile : MonoBehaviour
             if (collider.CompareTag("Player"))
             {
                 Destroy(gameObject);
-                PlayerHealth.Instance.ReduceHP(1);
+                //PlayerHealth.Instance.ReduceHP(1);
 
             }
         }
