@@ -21,18 +21,37 @@ public class PlayerHealth : MonoBehaviour
 
     public int hp;
     public int maxHp;
+    public bool invulnerable = false;
     public PlayerHealthContainer hpContainer;
     
     public void ReduceHP(int amount)
     {
-        hp -= amount;
-
-        hpContainer.DestroyHeart();
-
-        if(hp <= 0)
+        if(!invulnerable)
         {
-            Debug.Log(hp);
-            GameManager.instance.EndGame();
+            hp -= amount;
+
+            hpContainer.DestroyHeart();
+
+            if(hp <= 0)
+            {
+                Debug.Log(hp);
+                GameManager.instance.EndGame();
+            }
+            invulnerable = true;
+        }
+    }
+
+    private float timer = 0;
+    private void Update()
+    {
+        if(invulnerable && timer <= 2)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            invulnerable = false;
+            timer = 0;
         }
     }
 
