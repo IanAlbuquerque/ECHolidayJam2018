@@ -196,7 +196,7 @@ MonoBehaviour:
   explosionDuration: 2
   explosionChildCooldown: 0.3
   numDirections: 10
-  standingPosition: {x: 4.58, y: 0}
+  standingPosition: {x: 4.8, y: 0}
   speed: 0.5
   circleRadius: 0.2
   shootCooldown: 3
