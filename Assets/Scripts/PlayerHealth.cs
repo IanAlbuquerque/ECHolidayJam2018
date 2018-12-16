@@ -5,26 +5,21 @@ using UnityEngine;
 // Is a singleton
 public class PlayerHealth : MonoBehaviour
 {
-    public int hp;
-
     //===========Singleton stuff===========
-    static private PlayerHealth PHInstance = null;
-    private PlayerHealth()
-    {
-        hp = 3;
-    }
+    public static PlayerHealth Instance { get; private set; }
 
-    static public PlayerHealth GetPlayerHealth()
+    private void Awake()
     {
-        if(PHInstance == null)
+        if (Instance != null && Instance != this)
         {
-            PHInstance = new PlayerHealth();
+            Destroy(gameObject);
         }
 
-        return PHInstance;
+        Instance = this;
     }
     //==========End singleton stuff==========
-    
+
+    public int hp = 3;
     public GameManager GM;
     
     public void ReduceHP(int amount)

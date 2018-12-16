@@ -31,6 +31,6 @@ public class MedusaShooting : MonoBehaviour
         Vector3 offset = new Vector3(-1, 0, 0);
         shot = Instantiate(medusaShot, transform.position + offset, transform.rotation);
 
-        shot.GetComponent<Projectile>().shotPattern = "Medusa";
+        shot.GetComponent<Projectile>().SetShotPattern("Medusa");
     }
 }

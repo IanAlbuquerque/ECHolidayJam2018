@@ -6,8 +6,7 @@ public class Projectile : MonoBehaviour
 {
     Rigidbody2D rb;
     public Vector2 velocity;
-    public string shotPattern;  //Recieved from the shot prefab this script is currently attached to
-    public PlayerHealth ph;
+    private string shotPattern;  //Recieved from the shot prefab this script is currently attached to
 
     void Start()
     {
@@ -29,28 +28,40 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        // If it's NOT a wall
-        if (! collider.CompareTag("Wall"))
+        // If it's a wall
+        if (collider.CompareTag("Wall"))
         {
-            // If its an enemy's shot
-            if (shotPattern != "Player")
+            Destroy(gameObject);
+        }
+        // If its an enemy's shot
+        else if (shotPattern != "Player")
+        {
+            if (collider.CompareTag("Player"))
             {
-                if (collider.CompareTag("Player"))
-                {
-                    ph.ReduceHP(1);
+                Destroy(gameObject);
+                PlayerHealth.Instance.ReduceHP(1);
 
-                }
-            }
-            // If its a player's shot
-            else
-            {
-                if (collider.CompareTag("Enemy"))
-                {
-
-                }
             }
         }
-        Destroy(gameObject);
+        // If its a player's shot
+        else
+        {
+            if (collider.CompareTag("Enemy"))
+            {
+                Destroy(gameObject);
+
+            }
+        }
+        
     }
 
+    // Get & set for shotPattern
+    public string GetShotPattern()
+    {
+        return shotPattern;
+    }
+    public void SetShotPattern(string sp)
+    {
+        shotPattern = sp;
+    }
 }
