@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &89864406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1975668857473177539, guid: 54e8fddbd1bb288419dc2e578843fcf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 413837720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &89864407 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1975668857473177538, guid: 54e8fddbd1bb288419dc2e578843fcf1,
@@ -732,6 +738,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975668856633177534, guid: 54e8fddbd1bb288419dc2e578843fcf1,
+        type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975668856633177534, guid: 54e8fddbd1bb288419dc2e578843fcf1,
+        type: 3}
+      propertyPath: m_FillMethod
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e8fddbd1bb288419dc2e578843fcf1, type: 3}
@@ -1363,29 +1379,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ff0b7e6f686e041a237e24f9ab2c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  maxHp: 0
-  bossHealthBar: {fileID: 0}
---- !u!1 &1947872257 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3538302721261486345, guid: b91fea7412296ac419df63ccc7aef27f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1998272957}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1947872259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947872257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61cc9c1f872421448b56baf7a2827f35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heartPrefab: {fileID: 2267561574864974028, guid: 80c425acdb5d11c4da1beb8f810f7206,
-    type: 3}
+  hp: 3
+  maxHp: 100
+  bossHealthBar: {fileID: 89864406}
+  currentBoss: {fileID: 0}
 --- !u!1001 &1998272957
 PrefabInstance:
   m_ObjectHideFlags: 0

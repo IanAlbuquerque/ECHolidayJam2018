@@ -9,11 +9,6 @@ public class PlayerShooting : MonoBehaviour
     private GameObject shotInstance;
     public Vector3 offset;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         lastShot += Time.deltaTime;
@@ -28,8 +23,7 @@ public class PlayerShooting : MonoBehaviour
     }
 
     private void Shoot()
-    {
-        Debug.Log(offset);
+    { 
         shotInstance = Instantiate(arrowPrefab, transform.position + this.offset, transform.rotation);
     }
 }
