@@ -34,6 +34,7 @@ public class PlayerProjectile : MonoBehaviour
         else if (collider.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+            BossHealth.Instance.ReduceHealth(1);
 
         }    
     }

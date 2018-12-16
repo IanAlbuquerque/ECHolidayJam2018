@@ -14,7 +14,6 @@ public class PlayerHealthContainer : MonoBehaviour
 
         for (int i = 0; i < PlayerHealth.Instance.hp ; i++)
         {
-            Debug.Log("More hearts!");
             Instantiate(heartPrefab, heartLayout.transform);
         } 
 

@@ -19,7 +19,8 @@ public class PlayerHealth : MonoBehaviour
     }
     //==========End singleton stuff==========
 
-    public int hp = 3;
+    public int hp;
+    public int maxHp;
     public PlayerHealthContainer hpContainer;
     
     public void ReduceHP(int amount)
@@ -32,6 +33,21 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log(hp);
             GameManager.instance.EndGame();
+        }
+    }
+
+    // Regenerates "regen" points to the hp
+    public void RegenerateHp(int regen)
+    {
+        int newHP = hp+regen;
+
+        if (newHP > maxHp)
+        {
+            hp = maxHp;
+        }
+        else
+        {
+            hp = newHP;
         }
     }
 }
