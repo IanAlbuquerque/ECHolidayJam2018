@@ -11,17 +11,23 @@ public class PlayerHealthContainer : MonoBehaviour
     void Start()
     {
         heartLayout = transform.GetChild(1);
-
-        for (int i = 0; i < PlayerHealth.Instance.hp ; i++)
-        {
-            Instantiate(heartPrefab, heartLayout.transform);
-        } 
-
+        SpawnHearts();
     }
     
     // Destroys the first heart in the indicator
     public void DestroyHeart()
     {
         Destroy(heartLayout.GetChild(heartLayout.transform.childCount - 1).gameObject);
+    }
+
+    public void DestroyHearts(){
+        for (int i =  PlayerHealth.Instance.hp - 1; i >= 0; i--) Destroy(heartLayout.GetChild(i).gameObject);
+    }
+
+    public void SpawnHearts(){
+        for (int i = 0; i < PlayerHealth.Instance.hp ; i++)
+        {
+            Instantiate(heartPrefab, heartLayout.transform);
+        } 
     }
 }

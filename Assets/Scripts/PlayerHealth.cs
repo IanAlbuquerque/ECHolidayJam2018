@@ -39,6 +39,8 @@ public class PlayerHealth : MonoBehaviour
     // Regenerates "regen" points to the hp
     public void RegenerateHp(int regen)
     {
+        hpContainer.DestroyHearts();
+
         int newHP = hp+regen;
 
         if (newHP > maxHp)
@@ -49,5 +51,7 @@ public class PlayerHealth : MonoBehaviour
         {
             hp = newHP;
         }
+
+        hpContainer.SpawnHearts();
     }
 }

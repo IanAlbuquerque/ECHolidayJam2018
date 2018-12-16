@@ -120,10 +120,11 @@ public class Gifts : MonoBehaviour
     public void ApplyBuff(Buffs effect){
         switch(effect){
             case Buffs.moreLife:
-                Debug.Log("TODO: aumentar vida do player");
+                PlayerHealth.Instance.maxHp++;
+                PlayerHealth.Instance.RegenerateHp(PlayerHealth.Instance.maxHp);
                 break;
             case Buffs.moreSpeed:
-                Debug.Log("TODO: aumentar velocidade do player");
+                PlayerMovement.Instance.IncreaseSpeed();
                 break;
             default:
                 Debug.LogError("Buff inválido");
@@ -138,10 +139,11 @@ public class Gifts : MonoBehaviour
     public void ApplyDebuff(Debuffs effect){
         switch(effect){
             case Debuffs.lessLife:
-                Debug.Log("TODO: reduzir vida do player");
+                PlayerHealth.Instance.maxHp--;
+                PlayerHealth.Instance.RegenerateHp(PlayerHealth.Instance.maxHp);
                 break;
             case Debuffs.lessSpeed:
-                Debug.Log("TODO: reduzir velocidade do player");
+                PlayerMovement.Instance.DecreaseSpeed();
                 break;
             case Debuffs.newEnemy:
                 Debug.Log("TODO: acrescentar novo inimigo");
