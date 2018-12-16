@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public void Start(){
+        if(VictoryScreen.Instance){
+            Destroy(VictoryScreen.Instance.gameObject);
+            Credits();
+        }
+    }
     public void Play(){
         SceneManager.LoadScene("medusa");
     }
