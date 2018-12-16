@@ -12,4 +12,9 @@ public class MainMenu : MonoBehaviour
     public void Quit(){
         Application.Quit();
     }
+
+    public void Credits(){
+        gameObject.SetActive(false);
+        transform.parent.GetChild(1).gameObject.SetActive(true);
+    }
 }
