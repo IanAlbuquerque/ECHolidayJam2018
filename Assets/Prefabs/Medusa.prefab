@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8033289130050002411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.815, y: -0.16, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {x: 0, y: 0, z: 0}
-  - {x: -3.14, y: 0, z: 0}
+  - {x: -0.53, y: 0, z: 0}
   speed: 1.5
-  circleRadius: 0.5
+  circleRadius: 0.1
 --- !u!95 &351426218426187252
 Animator:
   serializedVersion: 3
