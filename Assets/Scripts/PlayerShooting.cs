@@ -7,7 +7,7 @@ public class PlayerShooting : MonoBehaviour
     public float fireRate;
     private float lastShot;
     private GameObject shotInstance;
-    public Vector3 shotOffset = new Vector3(0f, -0.1f, 0f);
+    public Vector3 offset;
 
     void Start()
     {
@@ -29,9 +29,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
-        
-        shotInstance = Instantiate(arrowPrefab, transform.position + shotOffset, transform.rotation);
-
-        shotInstance.GetComponent<Projectile>().SetShotPattern("Player");
+        Debug.Log(offset);
+        shotInstance = Instantiate(arrowPrefab, transform.position + this.offset, transform.rotation);
     }
 }

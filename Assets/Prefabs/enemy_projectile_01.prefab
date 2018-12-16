@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7823979897578809734}
   - component: {fileID: 8501907387242098364}
   - component: {fileID: 1421516709892695062}
-  - component: {fileID: 645850318872125005}
+  - component: {fileID: 6409453547795807116}
   - component: {fileID: 2616026834331381694}
   m_Layer: 0
   m_Name: enemy_projectile_01
@@ -119,8 +119,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &645850318872125005
+  m_Radius: 0.04
+--- !u!114 &6409453547795807116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,10 +129,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2817663984797730576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6489325e2237b47b9d7da80203013f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0819ad8c9ee4d9b4fb2609001774b3a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: -0.5, y: 0.2}
+  velocity: {x: -1, y: 0.2}
 --- !u!95 &2616026834331381694
 Animator:
   serializedVersion: 3

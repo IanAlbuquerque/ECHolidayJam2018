@@ -113,7 +113,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 2817663984797730576, guid: bd54da11acba8214e9d4d23e7340493c,
     type: 3}
   fireRate: 0.2
-  shotOffset: {x: 0, y: -0.1, z: 0}
+  offset: {x: 0, y: -0.06, z: 0}
 --- !u!114 &366892931581869305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  GM: {fileID: 0}
 --- !u!50 &4876883966210312806
 Rigidbody2D:
   serializedVersion: 4

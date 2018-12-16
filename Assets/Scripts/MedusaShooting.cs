@@ -28,9 +28,7 @@ public class MedusaShooting : MonoBehaviour
     }
 
     private void MedusaShoot()
-    {
-        GameObject shot;
-        shot = Instantiate(medusaShot, transform.position + this.offset, transform.rotation);
-        shot.GetComponent<Projectile>().SetShotPattern("Medusa");
+    { 
+        Instantiate(medusaShot, transform.position + this.offset, transform.rotation);
     }
 }

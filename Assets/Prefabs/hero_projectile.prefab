@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7676420476925142243}
   - component: {fileID: 7823979897578809734}
   - component: {fileID: 8501907387242098364}
+  - component: {fileID: 3044975602543317611}
   - component: {fileID: 1421516709892695062}
-  - component: {fileID: 645850318872125005}
   - component: {fileID: 2616026834331381694}
   m_Layer: 0
   m_Name: hero_projectile
@@ -104,6 +104,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3044975602543317611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817663984797730576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6489325e2237b47b9d7da80203013f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 2, y: 0}
 --- !u!58 &1421516709892695062
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -117,22 +130,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.09, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &645850318872125005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2817663984797730576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6489325e2237b47b9d7da80203013f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 3, y: 0}
+  m_Radius: 0.05
 --- !u!95 &2616026834331381694
 Animator:
   serializedVersion: 3
