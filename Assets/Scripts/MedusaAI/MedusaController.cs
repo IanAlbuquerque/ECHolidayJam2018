@@ -12,7 +12,9 @@ public class MedusaController : MonoBehaviour
 
     public void Start() {
         this.patterns.Add(this.GetComponent<MedusaWander>());
-        this.durations.Add(2.0f);
+        this.durations.Add(20.0f);
+        this.patterns.Add(this.GetComponent<MedusaFirework>());
+        this.durations.Add(20.0f);
         this.patterns[this.currentPattern].startAttackPattern();
     }
 
