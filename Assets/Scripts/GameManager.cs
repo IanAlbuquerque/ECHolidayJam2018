@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject giftMenu;
     private GameObject bossInstance;
     private int currentBoss = 0; // The current boss' index
-    private readonly float[] bossHPs = { 50, 75, 100 };   // The respective HP for each boss
+    private readonly float[] bossHPs = { 50, 150, 100 };   // The respective HP for each boss
     private readonly string[] bosses = { "johnny_bravo", "centaur", "medusa" }; // Array with all the bosses' names 
                                                                                    //in order of progression
 

@@ -12,6 +12,10 @@ public class MedusaController : MonoBehaviour
 
     private int phase = 0;
 
+    public void OnDestroy() {
+        this.patterns[this.currentPattern].stopAttackPattern();
+    }
+
     public void Start() {
         this.phase = 0;
         this.currentPattern = 0;
