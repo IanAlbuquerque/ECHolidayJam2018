@@ -1861,6 +1861,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4876883966210312805, guid: 3c176a487b1bd1e4189f45f79c36c710,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876883966210312805, guid: 3c176a487b1bd1e4189f45f79c36c710,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876883966210312805, guid: 3c176a487b1bd1e4189f45f79c36c710,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876883966210312805, guid: 3c176a487b1bd1e4189f45f79c36c710,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876883966210312805, guid: 3c176a487b1bd1e4189f45f79c36c710,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4876883966210312800, guid: 3c176a487b1bd1e4189f45f79c36c710,
         type: 3}
       propertyPath: shotOffset.y

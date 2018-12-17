@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
+        
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -34,10 +35,10 @@ public class PlayerHealth : MonoBehaviour
 
             if(hp <= 0)
             {
-                Debug.Log(hp);
                 GameManager.instance.EndGame();
             }
             invulnerable = true;
+            GetComponent<Animator>().SetLayerWeight(1, 1f);
         }
     }
 
@@ -52,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
         {
             invulnerable = false;
             timer = 0;
+            GetComponent<Animator>().SetLayerWeight(1, 0f);
         }
     }
 
