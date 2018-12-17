@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.16470589, g: 0.1137255, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1548,7 +1548,6 @@ GameObject:
   - component: {fileID: 1865881495}
   - component: {fileID: 1865881498}
   - component: {fileID: 1865881497}
-  - component: {fileID: 1865881496}
   m_Layer: 5
   m_Name: CreditsPanel
   m_TagString: Untagged
@@ -1580,18 +1579,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 470.7, y: 422}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1865881496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865881494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e556ddf5e630a4c899c5db118e7808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1865881497
 MonoBehaviour:
   m_ObjectHideFlags: 0
