@@ -11,8 +11,12 @@ GameObject:
   - component: {fileID: 8033289130050002412}
   - component: {fileID: 8033289130050002413}
   - component: {fileID: 8033289130050002410}
-  - component: {fileID: 203603966}
+  - component: {fileID: 2570123872941611393}
+  - component: {fileID: 3804945295419336857}
+  - component: {fileID: 1879061928301779257}
   - component: {fileID: 3157898478559505415}
+  - component: {fileID: 2725829819518376719}
+  - component: {fileID: 4594448650389483295}
   m_Layer: 0
   m_Name: johnny_bravo
   m_TagString: Enemy
@@ -108,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33217853, y: 0.20250636}
   m_EdgeRadius: 0
---- !u!114 &203603966
+--- !u!114 &2570123872941611393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,12 +121,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 8033289130050002411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82629c87fd19132429d0cffcf9aad3e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 402d22255269dd149996a818f41786d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {x: 0.9, y: 0, z: 0}
-  radius: 0.58
-  angularSpeed: 1
+--- !u!114 &3804945295419336857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033289130050002411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eca8424b14a65547bde0400948eccd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalProjectilePrefab: {fileID: 2817663984797730576, guid: 79575d3d81cf0f34e945b6f13af9eeb5,
+    type: 3}
+  speed: 1
+  shootCooldown: 1
+  projectileSpeed: 0.6
+  numDirections: 10
+  timeElapsed: 0
+--- !u!114 &1879061928301779257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033289130050002411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f198d240b784b74ba5db367bdb834f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalProjectilePrefab: {fileID: 2817663984797730576, guid: 79575d3d81cf0f34e945b6f13af9eeb5,
+    type: 3}
+  speed: 1
+  shootCooldown: 0.5
+  projectileSpeed: 1.5
+  numDirections: 13
+  timeElapsed: 0
 --- !u!95 &3157898478559505415
 Animator:
   serializedVersion: 3
@@ -142,3 +181,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2725829819518376719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033289130050002411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55f5f325de6dc843b14e1751027a474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalProjectilePrefab: {fileID: 2817663984797730576, guid: 79575d3d81cf0f34e945b6f13af9eeb5,
+    type: 3}
+  speed: 1
+  shootCooldown: 0.1
+  projectileSpeed: 2
+  numDirections: 3
+  timeElapsed: 0
+  angleRandomRange: 15
+--- !u!114 &4594448650389483295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033289130050002411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b11dc8d4e974a24e85b23b3d79a63d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

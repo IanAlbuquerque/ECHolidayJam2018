@@ -20,7 +20,10 @@ public class BossHealth : MonoBehaviour
         }
 
         Instance = this;
+        BossHealth.onAwake.trigger();
     }
+
+    public static Obs onAwake = new Obs();
     //==========End singleton stuff==========
 
     // Reduces the health by "amount"

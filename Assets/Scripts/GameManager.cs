@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject giftMenu;
     private GameObject bossInstance;
     private int currentBoss = 0; // The current boss' index
-    private readonly float[] bossHPs = { 50, 150, 100 };   // The respective HP for each boss
+    private readonly float[] bossHPs = { 100, 150, 100 };   // The respective HP for each boss
     private readonly string[] bosses = { "johnny_bravo", "centaur", "medusa" }; // Array with all the bosses' names 
                                                                                    //in order of progression
 
@@ -26,8 +26,12 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
 
-        bossInstance = (GameObject) Instantiate(Resources.Load(bosses[currentBoss]), bossSpawn, transform.rotation);
+        //bossInstance = (GameObject) Instantiate(Resources.Load(bosses[currentBoss]), bossSpawn, transform.rotation);
+        BossHealth.onAwake.subscribe(() => {
+            this.SpawnNextBoss();
+        });
     }
+
     //===========End singleton stuff===========
 
     public void EndGame()
