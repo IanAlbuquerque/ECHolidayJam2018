@@ -12,7 +12,11 @@ public class MainMenu : MonoBehaviour
         }
     }
     public void Play(){
-        SceneManager.LoadScene("medusa");
+        SceneManager.LoadScene("MainGame");
+    }
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void Quit(){
