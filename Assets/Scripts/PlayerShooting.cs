@@ -18,6 +18,8 @@ public class PlayerShooting : MonoBehaviour
             {
                 Shoot();
                 lastShot = 0;
+
+                GetComponent<AudioSource>().Play();
             }
         }
     }

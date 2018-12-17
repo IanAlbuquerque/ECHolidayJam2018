@@ -12,8 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject giftMenu;
     private GameObject bossInstance;
     private int currentBoss = 0; // The current boss' index
-    private readonly float[] bossHPs = { 100, 150, 100 };   // The respective HP for each boss
-    private readonly string[] bosses = { "johnny_bravo", "centaur", "medusa" }; // Array with all the bosses' names 
+    private readonly string[] bosses = { "johnny_bravo", "medusa", "centaur" }; // Array with all the bosses' names 
                                                                                    //in order of progression
 
     //===========Singleton stuff===========
@@ -25,13 +24,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         instance = this;
+        DontDestroyOnLoad(this);
 
-        //bossInstance = (GameObject) Instantiate(Resources.Load(bosses[currentBoss]), bossSpawn, transform.rotation);
         BossHealth.onAwake.subscribe(() => {
             this.SpawnNextBoss();
         });
     }
-
     //===========End singleton stuff===========
 
     public void EndGame()
@@ -39,8 +37,7 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(true);
 
         Destroy(player);
-
-        Invoke(SceneManager.GetActiveScene().ToString(), 4);
+        Invoke("RestartGame", 4);
     }
 
     //Called by BossHealth when it's health reaches 0
@@ -52,15 +49,22 @@ public class GameManager : MonoBehaviour
         // The game has finished
         if (currentBoss == 3)
         {
-            SceneManager.LoadScene("MainMenu");
+            currentBoss = 0;
+            Invoke("RestartGame", 4);
         }
         else
         {
             PlayerHealth.Instance.RegenerateHp(5);
             giftMenu.SetActive(true);
         }
+        PlayerHealth.Instance.invulnerable = true;
     }
 
+    public void RestartGame()
+    {
+
+        SceneManager.LoadScene(0);
+    }
 
     public float GetCurrentBossHP()
     {

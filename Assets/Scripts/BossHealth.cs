@@ -34,7 +34,6 @@ public class BossHealth : MonoBehaviour
 
         if (hp <= 0)
         { 
-
             GameManager.instance.DefeatBoss();
 
             hp = maxHp;

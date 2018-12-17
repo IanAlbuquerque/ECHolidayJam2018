@@ -38,7 +38,6 @@ public class PlayerHealth : MonoBehaviour
                 GameManager.instance.EndGame();
             }
             invulnerable = true;
-            GetComponent<Animator>().SetLayerWeight(1, 1f);
         }
     }
 
@@ -47,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(invulnerable && timer <= 2)
         {
+            GetComponent<Animator>().SetLayerWeight(1, 1f);
             timer += Time.deltaTime;
         }
         else
