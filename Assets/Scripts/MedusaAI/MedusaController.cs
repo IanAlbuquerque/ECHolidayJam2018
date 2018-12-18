@@ -33,16 +33,34 @@ public class MedusaController : MonoBehaviour
             this.currentPattern = (this.currentPattern + 1) % this.patterns.Count;
             this.patterns[this.currentPattern].startAttackPattern();
         }
-        if(BossHealth.Instance.hp / BossHealth.Instance.maxHp <= 0.5f && this.phase == 0) {
+        if(BossHealth.Instance.hp / BossHealth.Instance.maxHp <= 0.75f && this.phase == 0) {
+            this.patterns[this.currentPattern].stopAttackPattern();
             this.currentPattern = 0;
             this.counter = 0.0f;
             this.phase = 1;
-            this.patterns[this.currentPattern].stopAttackPattern();
             this.patterns = new List<EnemyAttackPattern>();
+            this.durations = new List<float>();
             this.patterns.Add(this.GetComponent<MedusaFirework>());
-            this.durations.Add(30.0f);
+            this.durations.Add(20.0f);
+            this.patterns.Add(this.GetComponent<MedusaWander>());
+            MedusaWander wanderScript = this.GetComponent<MedusaWander>();
+            wanderScript.shootCooldown *= 0.8f;
+            this.durations.Add(20.0f);
+            this.patterns[this.currentPattern].startAttackPattern();
+        }
+        if(BossHealth.Instance.hp / BossHealth.Instance.maxHp <= 0.25f && this.phase == 1) {
+            this.patterns[this.currentPattern].stopAttackPattern();
+            this.currentPattern = 0;
+            this.counter = 0.0f;
+            this.phase = 2;
+            this.patterns = new List<EnemyAttackPattern>();
+            this.durations = new List<float>();
+            this.patterns.Add(this.GetComponent<MedusaFirework>());
+            this.durations.Add(20.0f);
+            MedusaFirework fireworkScript = this.GetComponent<MedusaFirework>();
+            fireworkScript.shootCooldown *= 0.7f;
             this.patterns.Add(this.GetComponent<MedusaWanderWithGas>());
-            this.durations.Add(30.0f);
+            this.durations.Add(20.0f);
             this.patterns[this.currentPattern].startAttackPattern();
         }
     }

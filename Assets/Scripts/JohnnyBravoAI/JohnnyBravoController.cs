@@ -48,13 +48,14 @@ public class JohnnyBravoController : MonoBehaviour
             this.patterns[this.currentPattern].startAttackPattern();
         }
         if(BossHealth.Instance.hp / BossHealth.Instance.maxHp <= 0.5f && this.phase == 0) {
+            this.patterns[this.currentPattern].stopAttackPattern();
             this.currentPattern = 0;
             this.counter = 0.0f;
             this.phase = 1;
-            this.patterns[this.currentPattern].stopAttackPattern();
             this.patterns = new List<EnemyAttackPattern>();
+            this.durations = new List<float>();
             this.patterns.Add(this.GetComponent<JohnnyBravoFlowerStanding>());
-            this.durations.Add(5.0f);
+            this.durations.Add(3.5f);
             this.patterns.Add(this.GetComponent<JohnnyBravoFlower>());
             this.durations.Add(10.0f);
             this.patterns[this.currentPattern].startAttackPattern();

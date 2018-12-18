@@ -139,8 +139,8 @@ MonoBehaviour:
   directionalProjectilePrefab: {fileID: 2817663984797730576, guid: 79575d3d81cf0f34e945b6f13af9eeb5,
     type: 3}
   speed: 1
-  shootCooldown: 1
-  projectileSpeed: 0.6
+  shootCooldown: 0.7
+  projectileSpeed: 1
   numDirections: 10
   timeElapsed: 0
 --- !u!114 &1879061928301779257
@@ -160,7 +160,7 @@ MonoBehaviour:
   speed: 1
   shootCooldown: 0.5
   projectileSpeed: 1.5
-  numDirections: 13
+  numDirections: 14
   timeElapsed: 0
 --- !u!95 &3157898478559505415
 Animator:
@@ -200,7 +200,7 @@ MonoBehaviour:
   projectileSpeed: 2
   numDirections: 3
   timeElapsed: 0
-  angleRandomRange: 15
+  angleRandomRange: 5
 --- !u!114 &4594448650389483295
 MonoBehaviour:
   m_ObjectHideFlags: 0

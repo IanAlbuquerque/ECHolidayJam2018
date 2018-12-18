@@ -172,7 +172,7 @@ MonoBehaviour:
   - {x: 3.6, y: -1.09}
   speed: 0.5
   circleRadius: 0.1
-  shootCooldown: 0.3
+  shootCooldown: 0.35
   projectileSpeed: 1
 --- !u!114 &9200420474693982023
 MonoBehaviour:
@@ -192,15 +192,15 @@ MonoBehaviour:
     type: 3}
   targetPrefab: {fileID: 2817663984797730576, guid: 28ec2b4f20a34f34cab4fed573c331d3,
     type: 3}
-  baseSpeed: 3
+  baseSpeed: 2
   childSpeed: 1
-  explosionDuration: 2
+  explosionDuration: 1
   explosionChildCooldown: 0.3
   numDirections: 10
   standingPosition: {x: 3.6, y: 0}
   speed: 0.5
   circleRadius: 0.2
-  shootCooldown: 3
+  shootCooldown: 2.5
 --- !u!114 &7238008214035265244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,9 +223,9 @@ MonoBehaviour:
   - {x: 3.6, y: -1.09}
   speed: 0.5
   circleRadius: 0.1
-  shootCooldown: 0.3
+  shootCooldown: 0.28
   projectileSpeed: 1
-  gasCooldown: 5
+  gasCooldown: 2
   gasSpeed: 2
 --- !u!114 &222259155
 MonoBehaviour:
