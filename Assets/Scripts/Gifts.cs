@@ -166,7 +166,9 @@ public class Gifts : MonoBehaviour
     /// OnClick do botão escolhido
     /// </summary>
     /// <param name="btn">referencia para o botão</param>
+    public AudioSource gift;
     public void Choose(Button btn){
+        gift.Play();
         ApplyBuff(choiceBuffs[btn]);
         ApplyDebuff(choiceDebuffs[btn]);
 
