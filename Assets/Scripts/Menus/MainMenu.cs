@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject creditsObject;
+    public GameObject tutorialObject;
+    public GameObject heroObject;
+
     public void Start(){
         if(VictoryScreen.Instance){
             Destroy(VictoryScreen.Instance.gameObject);
@@ -21,6 +25,8 @@ public class MainMenu : MonoBehaviour
 
     public void Credits(){
         gameObject.SetActive(false);
-        transform.parent.GetChild(1).gameObject.SetActive(true);
+        this.heroObject.SetActive(false);
+        this.tutorialObject.SetActive(false);
+        this.creditsObject.SetActive(true);
     }
 }
