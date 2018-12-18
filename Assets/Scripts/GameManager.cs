@@ -21,12 +21,16 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
         {
             Destroy(gameObject);
         }
-        instance = this;
         DontDestroyOnLoad(this);
+        
 
         BossHealth.onAwake.subscribe(() => {
             this.SpawnNextBoss();

@@ -6,19 +6,20 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     //===========Singleton stuff===========
-    public static PlayerHealth Instance { get; private set; }
-
+    public static PlayerHealth instance { get; private set; }
     private void Awake()
     {
-        
-        if (Instance != null && Instance != this)
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
         {
             Destroy(gameObject);
         }
-
-        Instance = this;
+        DontDestroyOnLoad(this);
     }
-    //==========End singleton stuff==========
+    //===========End singleton stuff===========
 
     public int hp;
     public int maxHp;
