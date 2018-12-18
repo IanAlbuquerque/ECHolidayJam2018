@@ -25,8 +25,10 @@ public class JohnnyBravoFlower : MonoBehaviour, EnemyAttackPattern
         this.isRunning = false;
     }
 
+    public AudioSource jbShoot;
     private void shoot() {
         float step = 2 * Mathf.PI / this.numDirections / 4.0f;
+        jbShoot.Play();
         for(float i = 0; i < this.numDirections; i += 1) {
             float currentStep = i * step + (3 * Mathf.PI / 4.0f) + (Mathf.PI / 6.0f) * Mathf.Sin(2.0f * this.timeElapsed);
             GameObject projectile = Instantiate(this.directionalProjectilePrefab, this.transform.position, this.transform.rotation);

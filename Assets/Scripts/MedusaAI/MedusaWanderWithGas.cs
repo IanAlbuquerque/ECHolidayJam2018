@@ -34,7 +34,9 @@ public class MedusaWanderWithGas : MonoBehaviour, EnemyAttackPattern
         this.isRunning = false;
     }
 
+    public AudioSource mShoot;
     private void shoot() {
+        mShoot.Play();
         Vector3 playerPosition3D = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         Vector2 playerPosition2D = new Vector2(playerPosition3D.x, playerPosition3D.y);
         Vector2 enemyPosition2D = new Vector2(this.transform.position.x, this.transform.position.y);
@@ -44,7 +46,9 @@ public class MedusaWanderWithGas : MonoBehaviour, EnemyAttackPattern
         directionalProjectile.speed = this.projectileSpeed;
     }
 
+    public AudioSource mGas;
     private void shootGas() {
+        //mGas.Play();
         GameObject projectile = Instantiate(this.gasProjectilePrefab, this.transform.position, this.transform.rotation);
         DirectionalProjectile gasProjectile = projectile.GetComponent<DirectionalProjectile>();
         gasProjectile.direction = new Vector2(-1.0f, 0.0f);

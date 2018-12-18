@@ -27,12 +27,15 @@ public class JohnnyBravoGattling : MonoBehaviour, EnemyAttackPattern
         this.isRunning = false;
     }
 
+    public AudioSource jbShoot;
     private void shoot() {
         Vector3 playerPosition3D = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         Vector2 playerPosition2D = new Vector2(playerPosition3D.x, playerPosition3D.y);
         Vector2 enemyPosition2D = new Vector2(this.transform.position.x, this.transform.position.y);
         Vector2 direction = playerPosition2D - enemyPosition2D;
+
         for(float i = 0; i < this.numDirections; i += 1) {
+            jbShoot.Play();
             Vector2 randomizedDirection = Quaternion.AngleAxis(Random.Range(-angleRandomRange, angleRandomRange), Vector3.forward) * direction;
             GameObject projectile = Instantiate(this.directionalProjectilePrefab, this.transform.position, this.transform.rotation);
             DirectionalProjectile directionalProjectile = projectile.GetComponent<DirectionalProjectile>();

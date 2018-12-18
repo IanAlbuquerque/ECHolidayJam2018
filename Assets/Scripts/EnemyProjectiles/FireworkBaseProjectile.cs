@@ -87,7 +87,9 @@ public class FireworkBaseProjectile : MonoBehaviour
 
     }
 
+    public AudioSource mFirework;
     private void triggerChildSpawn() {
+        mFirework.Play();
         float step = 2 * Mathf.PI / this.numDirections;
         for(float i = 0; i < this.numDirections; i += 1) {
             float currentStep = i * step;

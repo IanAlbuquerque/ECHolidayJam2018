@@ -38,7 +38,9 @@ public class MedusaFirework : MonoBehaviour, EnemyAttackPattern
         this.isRunning = false;
     }
 
+    //public AudioSource mShoot;
     private void shoot() {
+        //mShoot.Play();
         Vector3 playerPosition3D = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         Vector2 playerPosition2D = new Vector2(playerPosition3D.x, playerPosition3D.y);
         GameObject projectile = Instantiate(this.fireworkBasePrefab, this.transform.position, this.transform.rotation);

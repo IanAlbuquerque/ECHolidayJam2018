@@ -175,6 +175,7 @@ MonoBehaviour:
   circleRadius: 0.1
   shootCooldown: 0.35
   projectileSpeed: 1
+  mShoot: {fileID: 3856701945646382974}
 --- !u!114 &9200420474693982023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +203,7 @@ MonoBehaviour:
   speed: 0.5
   circleRadius: 0.2
   shootCooldown: 2.5
+  mShoot: {fileID: 3856701945646382974}
 --- !u!114 &7238008214035265244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +230,8 @@ MonoBehaviour:
   projectileSpeed: 1
   gasCooldown: 2
   gasSpeed: 2
+  mShoot: {fileID: 3856701945646382974}
+  mGas: {fileID: 0}
 --- !u!114 &222259155
 MonoBehaviour:
   m_ObjectHideFlags: 0
