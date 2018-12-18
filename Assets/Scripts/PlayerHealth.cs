@@ -24,11 +24,13 @@ public class PlayerHealth : MonoBehaviour
     public int maxHp;
     public bool invulnerable = false;
     public PlayerHealthContainer hpContainer;
-    
+
+    public AudioSource playerHit;
     public void ReduceHP(int amount)
     {
         if(!invulnerable)
         {
+            playerHit.Play();
             hp -= amount;
 
             hpContainer.DestroyHeart();

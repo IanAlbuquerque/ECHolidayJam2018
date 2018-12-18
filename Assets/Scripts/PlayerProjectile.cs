@@ -6,6 +6,7 @@ public class PlayerProjectile : MonoBehaviour
 {
     Rigidbody2D rb;
     public Vector2 velocity;
+    public float damage;
 
     private Vector2 startingPosition;
     private float timeElapsed;
@@ -34,7 +35,7 @@ public class PlayerProjectile : MonoBehaviour
         else if (collider.CompareTag("Enemy"))
         {
             Destroy(gameObject);
-            BossHealth.Instance.ReduceHealth(1);
+            BossHealth.Instance.ReduceHealth(PlayerShooting.instance.damage);
 
         }    
     }
