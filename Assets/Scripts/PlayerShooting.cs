@@ -27,7 +27,7 @@ public class PlayerShooting : MonoBehaviour
     {
         lastShot += Time.deltaTime;
 
-        if (Input.GetKey("space")) {
+        if (Input.GetKey("space") || Input.GetKey("k") || Input.GetKey("return")) {
             if(lastShot > fireRate)
             {
                 Shoot();

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8688581004818751535}
   - component: {fileID: 8688581004818751534}
   - component: {fileID: 8688581004818751520}
+  - component: {fileID: 3295155584660858374}
   m_Layer: 0
   m_Name: crowd
   m_TagString: Untagged
@@ -95,3 +96,22 @@ MonoBehaviour:
   speed: 1
   limitLeft: -5
   keeper: {fileID: 0}
+--- !u!95 &3295155584660858374
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8688581004818751533}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5aea25b93f551374f88d946eaae789a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

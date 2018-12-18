@@ -58,13 +58,13 @@ public class Gifts : MonoBehaviour
 
         switch(buff){
             case Buffs.moreLife:
-                buffStr = "Increase your life";
+                buffStr = "more lives";
                 break;
             case Buffs.moreSpeed:
-                buffStr = "Increase your speed";
+                buffStr = "faster movement speed";
                 break;
             case Buffs.dealMoreDamage:
-                buffStr = "Deals more damage";
+                buffStr = "higher damage";
                 break;
             default:
                 Debug.LogError("Buff inválido");
@@ -74,13 +74,13 @@ public class Gifts : MonoBehaviour
 
         switch(debuff){
             case Debuffs.lessLife:
-                debuffStr = "decrease your life";
+                debuffStr = "Sacrifice lives";
                 break;
             case Debuffs.lessSpeed:
-                debuffStr = "decrease your speed";
+                debuffStr = "Sacrifice movement speed";
                 break;
             case Debuffs.lessFireRate:
-                debuffStr = "decrease your firerate";
+                debuffStr = "Sacrifice fire rate";
                 break;
             default:
                 Debug.LogError("Debuff inválido");
@@ -88,7 +88,7 @@ public class Gifts : MonoBehaviour
                 break;           
         }
 
-        return buffStr + " but " + debuffStr;
+        return debuffStr + " for the blessing of " + buffStr;
     }
 
     /// <summary>
