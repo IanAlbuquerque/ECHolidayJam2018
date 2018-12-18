@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private int currentBoss = 0; // The current boss' index
     private readonly string[] bosses = { "johnny_bravo", "medusa", "centaur" }; // Array with all the bosses' names 
                                                                                    //in order of progression
-    private readonly float[] bossHPs = { 2, 4, 200 };   // The respective HP for each boss
+    private readonly float[] bossHPs = { 200, 200, 200 };   // The respective HP for each boss
 
     //===========Singleton stuff===========
     public static GameManager instance { get; private set; }
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         if (currentBoss == 3)
         {
             currentBoss = 0;
-            Invoke("RestartGame", 4);
+            Invoke("WinGame", 4);
         }
         else
         {
@@ -61,6 +61,11 @@ public class GameManager : MonoBehaviour
             giftMenu.SetActive(true);
         }
         PlayerHealth.Instance.invulnerable = true;
+    }
+
+    public void WinGame()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void RestartGame()
