@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject giftMenu;
     private GameObject bossInstance;
+    public AudioSource music;
     private int currentBoss = 0; // The current boss' index
     private readonly string[] bosses = { "johnny_bravo", "medusa", "centaur" }; // Array with all the bosses' names 
                                                                                    //in order of progression
-    private readonly float[] bossHPs = { 2, 2, 200 };   // The respective HP for each boss
+    private readonly float[] bossHPs = { 2, 4, 200 };   // The respective HP for each boss
 
     //===========Singleton stuff===========
     public static GameManager instance { get; private set; }
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            music.Stop();
             PlayerHealth.Instance.RegenerateHp(5);
             giftMenu.SetActive(true);
         }
@@ -63,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-
+        music.Stop();
         SceneManager.LoadScene(0);
     }
 
@@ -71,10 +73,14 @@ public class GameManager : MonoBehaviour
     {
         return bossHPs[currentBoss];
     }
-
+    private void OnEnable()
+    {
+        music.Play();
+    }
     // Sets the next boss' health and spawns it
     public GameObject SpawnNextBoss()
     {
+        music.Play();
         BossHealth.Instance.SetBossMaxHP(bossHPs[currentBoss]);
         bossInstance = (GameObject)Instantiate(Resources.Load(bosses[currentBoss]), bossSpawn, transform.rotation);
         return bossInstance;
