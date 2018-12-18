@@ -125,8 +125,8 @@ public class Gifts : MonoBehaviour
     public void ApplyBuff(Buffs effect){
         switch(effect){
             case Buffs.moreLife:
-                PlayerHealth.Instance.maxHp++;
-                PlayerHealth.Instance.RegenerateHp(PlayerHealth.Instance.maxHp);
+                PlayerHealth.instance.maxHp++;
+                PlayerHealth.instance.RegenerateHp(PlayerHealth.instance.maxHp);
                 break;
             case Buffs.moreSpeed:
                 PlayerMovement.Instance.IncreaseSpeed();
@@ -147,8 +147,8 @@ public class Gifts : MonoBehaviour
     public void ApplyDebuff(Debuffs effect){
         switch(effect){
             case Debuffs.lessLife:
-                PlayerHealth.Instance.maxHp--;
-                PlayerHealth.Instance.RegenerateHp(PlayerHealth.Instance.maxHp);
+                PlayerHealth.instance.maxHp--;
+                PlayerHealth.instance.RegenerateHp(PlayerHealth.instance.maxHp);
                 break;
             case Debuffs.lessSpeed:
                 PlayerMovement.Instance.DecreaseSpeed();
