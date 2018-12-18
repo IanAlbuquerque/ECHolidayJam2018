@@ -7,9 +7,12 @@ public class PlayerHealthContainer : MonoBehaviour
     public GameObject heartPrefab;
     private Transform heartLayout;
 
+    public PlayerHealth PlayerHealth;
+
     // Start is called before the first frame update
     void Start()
     {
+        this.PlayerHealth = (PlayerHealth) FindObjectsOfType(typeof(PlayerHealth))[0];
         heartLayout = transform.GetChild(1);
         SpawnHearts();
     }
@@ -21,11 +24,11 @@ public class PlayerHealthContainer : MonoBehaviour
     }
 
     public void DestroyHearts(){
-        for (int i =  PlayerHealth.Instance.hp - 1; i >= 0; i--) Destroy(heartLayout.GetChild(i).gameObject);
+        for (int i =  PlayerHealth.hp - 1; i >= 0; i--) Destroy(heartLayout.GetChild(i).gameObject);
     }
 
     public void SpawnHearts(){
-        for (int i = 0; i < PlayerHealth.Instance.hp ; i++)
+        for (int i = 0; i < PlayerHealth.hp ; i++)
         {
             Instantiate(heartPrefab, heartLayout.transform);
         } 

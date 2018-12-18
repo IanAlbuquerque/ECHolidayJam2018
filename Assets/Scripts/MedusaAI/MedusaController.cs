@@ -12,11 +12,14 @@ public class MedusaController : MonoBehaviour
 
     private int phase = 0;
 
+    public BossHealth BossHealth;
+
     public void OnDestroy() {
         this.patterns[this.currentPattern].stopAttackPattern();
     }
 
     public void Start() {
+        this.BossHealth = (BossHealth) FindObjectsOfType(typeof(BossHealth))[0];
         this.phase = 0;
         this.currentPattern = 0;
         this.counter = 0.0f;
@@ -33,7 +36,7 @@ public class MedusaController : MonoBehaviour
             this.currentPattern = (this.currentPattern + 1) % this.patterns.Count;
             this.patterns[this.currentPattern].startAttackPattern();
         }
-        if(BossHealth.Instance.hp / BossHealth.Instance.maxHp <= 0.75f && this.phase == 0) {
+        if(BossHealth.hp / BossHealth.maxHp <= 0.75f && this.phase == 0) {
             this.patterns[this.currentPattern].stopAttackPattern();
             this.currentPattern = 0;
             this.counter = 0.0f;
@@ -48,7 +51,7 @@ public class MedusaController : MonoBehaviour
             this.durations.Add(20.0f);
             this.patterns[this.currentPattern].startAttackPattern();
         }
-        if(BossHealth.Instance.hp / BossHealth.Instance.maxHp <= 0.25f && this.phase == 1) {
+        if(BossHealth.hp / BossHealth.maxHp <= 0.25f && this.phase == 1) {
             this.patterns[this.currentPattern].stopAttackPattern();
             this.currentPattern = 0;
             this.counter = 0.0f;

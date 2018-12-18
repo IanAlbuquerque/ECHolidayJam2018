@@ -11,11 +11,9 @@ public class MainMenu : MonoBehaviour
     public AudioSource click;
 
     public void Start(){
-        if(VictoryScreen.Instance){
-            Destroy(VictoryScreen.Instance.gameObject);
-            Credits();
-        }
+
     }
+    
     public void Play(){
         click.Play();
         SceneManager.LoadScene("MainGame");

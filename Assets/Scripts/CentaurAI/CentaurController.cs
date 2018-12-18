@@ -12,7 +12,10 @@ public class CentaurController : MonoBehaviour
 
     private GameObject clone;
 
+    public BossHealth BossHealth;
+
     public void Start() {
+        this.BossHealth = (BossHealth) FindObjectsOfType(typeof(BossHealth))[0];
         this.phase = 0;
         this.counter = 0.0f;
         this.currentPattern = this.GetComponent<CentaurChargeWithoutAura>();
@@ -36,14 +39,14 @@ public class CentaurController : MonoBehaviour
 
     public void Update() {
         this.counter += Time.deltaTime;
-        if(BossHealth.Instance.hp / BossHealth.Instance.maxHp <= 0.66f && this.phase == 0) {
+        if(BossHealth.hp / BossHealth.maxHp <= 0.66f && this.phase == 0) {
             this.currentPattern.stopAttackPattern();
             this.counter = 0.0f;
             this.phase = 1;
             this.currentPattern = this.GetComponent<CentaurCharge>();
             this.currentPattern.startAttackPattern();
         }
-        if(BossHealth.Instance.hp / BossHealth.Instance.maxHp <= 0.25f && this.phase == 1) {
+        if(BossHealth.hp / BossHealth.maxHp <= 0.25f && this.phase == 1) {
             this.currentPattern.stopAttackPattern();
             this.counter = 0.0f;
             this.phase = 2;

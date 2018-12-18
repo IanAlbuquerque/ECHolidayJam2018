@@ -12,8 +12,11 @@ public class DirectionalProjectile : MonoBehaviour
     private Vector2 startingPosition;
     private float timeElapsed;
 
+    public PlayerHealth PlayerHealth;
+
     void Start()
     {
+        this.PlayerHealth = (PlayerHealth) FindObjectsOfType(typeof(PlayerHealth))[0];
         rb = GetComponent<Rigidbody2D>();
         this.startingPosition = new Vector2(this.transform.position.x, this.transform.position.y);
         this.timeElapsed = 0;
@@ -35,7 +38,7 @@ public class DirectionalProjectile : MonoBehaviour
             Destroy(gameObject);
         } else if (collider.CompareTag("Player")) {
             Destroy(gameObject);
-            PlayerHealth.Instance.ReduceHP(1);
+            PlayerHealth.ReduceHP(1);
         }
     }
 }

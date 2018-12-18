@@ -7,6 +7,12 @@ using UnityEngine.UI;
 
 public class Gifts : MonoBehaviour
 {
+
+    public GameManager GameManager;
+    public PlayerHealth PlayerHealth;
+    public PlayerMovement PlayerMovement;
+    public PlayerShooting PlayerShooting;
+
     public enum Buffs {
         moreLife,
         moreSpeed,
@@ -19,6 +25,13 @@ public class Gifts : MonoBehaviour
         lessSpeed,
         lessFireRate
         //newEnemy
+    }
+
+    public void Start() {
+        this.PlayerShooting = (PlayerShooting) FindObjectsOfType(typeof(PlayerShooting))[0];
+        this.PlayerMovement = (PlayerMovement) FindObjectsOfType(typeof(PlayerMovement))[0];
+        this.PlayerHealth = (PlayerHealth) FindObjectsOfType(typeof(PlayerHealth))[0];
+        this.GameManager = (GameManager) FindObjectsOfType(typeof(GameManager))[0];
     }
 
     public List<Button> choiceButtons;
@@ -125,14 +138,14 @@ public class Gifts : MonoBehaviour
     public void ApplyBuff(Buffs effect){
         switch(effect){
             case Buffs.moreLife:
-                PlayerHealth.instance.maxHp++;
-                PlayerHealth.instance.RegenerateHp(PlayerHealth.instance.maxHp);
+                PlayerHealth.maxHp++;
+                PlayerHealth.RegenerateHp(PlayerHealth.maxHp);
                 break;
             case Buffs.moreSpeed:
-                PlayerMovement.Instance.IncreaseSpeed();
+                PlayerMovement.IncreaseSpeed();
                 break;
             case Buffs.dealMoreDamage:
-                PlayerShooting.instance.damage += 0.5f;
+                PlayerShooting.damage += 0.5f;
                 break;
             default:
                 Debug.LogError("Buff inválido");
@@ -147,14 +160,14 @@ public class Gifts : MonoBehaviour
     public void ApplyDebuff(Debuffs effect){
         switch(effect){
             case Debuffs.lessLife:
-                PlayerHealth.instance.maxHp--;
-                PlayerHealth.instance.RegenerateHp(PlayerHealth.instance.maxHp);
+                PlayerHealth.maxHp--;
+                PlayerHealth.RegenerateHp(PlayerHealth.maxHp);
                 break;
             case Debuffs.lessSpeed:
-                PlayerMovement.Instance.DecreaseSpeed();
+                PlayerMovement.DecreaseSpeed();
                 break;
             case Debuffs.lessFireRate:
-                PlayerShooting.instance.fireRate += 0.1f;
+                PlayerShooting.fireRate += 0.1f;
                 break;
             default:
                 Debug.LogError("Debuff inválido");
@@ -172,7 +185,7 @@ public class Gifts : MonoBehaviour
         ApplyBuff(choiceBuffs[btn]);
         ApplyDebuff(choiceDebuffs[btn]);
 
-        GameManager.instance.SpawnNextBoss();
+        GameManager.SpawnNextBoss();
 
         transform.parent.gameObject.SetActive(false);
     }

@@ -14,8 +14,11 @@ public class AxeProjectile : MonoBehaviour
     private Vector2 startingPosition;
     private float timeElapsed;
 
+    public PlayerHealth PlayerHealth;
+
     void Start()
     {
+        this.PlayerHealth = (PlayerHealth) FindObjectsOfType(typeof(PlayerHealth))[0];
         rb = GetComponent<Rigidbody2D>();
         this.timeElapsed = 0;
     }
@@ -35,7 +38,7 @@ public class AxeProjectile : MonoBehaviour
             //Destroy(gameObject);
         } else if (collider.CompareTag("Player")) {
             //Destroy(gameObject);
-            PlayerHealth.Instance.ReduceHP(1);
+            PlayerHealth.ReduceHP(1);
         }
     }
 }

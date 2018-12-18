@@ -15,28 +15,17 @@ public class GameManager : MonoBehaviour
     public int currentBoss = 0; // The current boss' index
     private readonly string[] bosses = { "johnny_bravo", "centaur", "medusa" }; // Array with all the bosses' names 
                                                                                    //in order of progression
-    private readonly float[] bossHPs = { 200, 200, 200 };   // The respective HP for each boss
+    private readonly float[] bossHPs = { 20, 20, 20 };   // The respective HP for each boss
 
-    //===========Singleton stuff===========
-    public static GameManager instance { get; private set; }
-    private void Awake()
-    {
-        if (!instance)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(this);
-        
+    public PlayerHealth PlayerHealth;
 
-        BossHealth.onAwake.subscribe(() => {
-            this.SpawnNextBoss();
-        });
+    public BossHealth BossHealth;
+
+    public void Start() {
+        this.BossHealth = (BossHealth) FindObjectsOfType(typeof(BossHealth))[0];
+        this.PlayerHealth = (PlayerHealth) FindObjectsOfType(typeof(PlayerHealth))[0];
+        this.SpawnNextBoss();
     }
-    //===========End singleton stuff===========
 
     public void EndGame()
     {
@@ -61,10 +50,10 @@ public class GameManager : MonoBehaviour
         else
         {
             music.Stop();
-            PlayerHealth.Instance.RegenerateHp(5);
+            PlayerHealth.RegenerateHp(5);
             giftMenu.SetActive(true);
         }
-        PlayerHealth.Instance.invulnerable = true;
+        PlayerHealth.invulnerable = true;
     }
 
     public void WinGame()
@@ -90,7 +79,7 @@ public class GameManager : MonoBehaviour
     public GameObject SpawnNextBoss()
     {
         music.Play();
-        BossHealth.Instance.SetBossMaxHP(bossHPs[currentBoss]);
+        BossHealth.SetBossMaxHP(bossHPs[currentBoss]);
         bossInstance = (GameObject)Instantiate(Resources.Load(bosses[currentBoss]), bossSpawn, transform.rotation);
         return bossInstance;
     }

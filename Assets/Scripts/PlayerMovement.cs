@@ -5,19 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    //===========Singleton stuff===========
-    public static PlayerMovement Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-
-        Instance = this;
-    }
-    //==========End singleton stuff==========
     private Rigidbody2D rigidbody2D;
     public float movementSpeed = 2.0f;
     public float movementIncrease = 50f;

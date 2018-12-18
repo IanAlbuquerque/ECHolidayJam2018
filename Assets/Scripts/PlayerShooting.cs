@@ -10,19 +10,6 @@ public class PlayerShooting : MonoBehaviour
     public Vector3 offset;
     public float damage = 1;
 
-    //===========Singleton stuff===========
-    public static PlayerShooting instance { get; private set; }
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-        }
-        instance = this;
-        DontDestroyOnLoad(this);
-    }
-    //===========End singleton stuff===========
-
     void Update()
     {
         lastShot += Time.deltaTime;

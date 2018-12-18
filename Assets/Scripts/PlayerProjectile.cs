@@ -11,8 +11,14 @@ public class PlayerProjectile : MonoBehaviour
     private Vector2 startingPosition;
     private float timeElapsed;
 
+    public PlayerShooting PlayerShooting;
+
+    public BossHealth BossHealth;
+
     void Start()
     {
+        this.BossHealth = (BossHealth) FindObjectsOfType(typeof(BossHealth))[0];
+        this.PlayerShooting = (PlayerShooting) FindObjectsOfType(typeof(PlayerShooting))[0];
         rb = GetComponent<Rigidbody2D>();
         this.startingPosition = new Vector2(this.transform.position.x, this.transform.position.y);
         this.timeElapsed = 0;
@@ -35,7 +41,7 @@ public class PlayerProjectile : MonoBehaviour
         else if (collider.CompareTag("Enemy"))
         {
             Destroy(gameObject);
-            BossHealth.Instance.ReduceHealth(PlayerShooting.instance.damage);
+            BossHealth.ReduceHealth(PlayerShooting.damage);
 
         }    
     }

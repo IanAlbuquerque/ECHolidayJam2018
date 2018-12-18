@@ -29,6 +29,8 @@ public class FireworkBaseProjectile : MonoBehaviour
 
     public int numDirections = 10;
 
+    public PlayerHealth PlayerHealth;
+
     public void setTarget(Vector2 target, GameObject targetPrefab) {
         Vector3 pos3D = new Vector3(target.x, target.y, 0.0f);
         this.targetGameObject = Instantiate(targetPrefab, pos3D, Quaternion.identity);
@@ -37,6 +39,7 @@ public class FireworkBaseProjectile : MonoBehaviour
 
     void Start()
     {
+        this.PlayerHealth = (PlayerHealth) FindObjectsOfType(typeof(PlayerHealth))[0];
         rb = GetComponent<Rigidbody2D>();
         this.startingPosition = new Vector2(this.transform.position.x, this.transform.position.y);
         this.timeElapsed = 0;
@@ -112,7 +115,7 @@ public class FireworkBaseProjectile : MonoBehaviour
             if(this.targetGameObject != null) {
                 Destroy(this.targetGameObject);
             }
-            PlayerHealth.Instance.ReduceHP(1);
+            PlayerHealth.ReduceHP(1);
         }
     }
 }

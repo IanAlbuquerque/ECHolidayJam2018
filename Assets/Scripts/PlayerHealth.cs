@@ -5,21 +5,7 @@ using UnityEngine;
 // Is a singleton
 public class PlayerHealth : MonoBehaviour
 {
-    //===========Singleton stuff===========
-    public static PlayerHealth instance { get; private set; }
-    private void Awake()
-    {
-        if (!instance)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(this);
-    }
-    //===========End singleton stuff===========
+    public GameManager GameManager;
 
     public int hp;
     public int maxHp;
@@ -27,6 +13,11 @@ public class PlayerHealth : MonoBehaviour
     public PlayerHealthContainer hpContainer;
 
     public AudioSource playerHit;
+
+    public void Start() {
+        this.GameManager = (GameManager) FindObjectsOfType(typeof(GameManager))[0];
+    }
+    
     public void ReduceHP(int amount)
     {
         if(!invulnerable)
@@ -38,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
 
             if(hp <= 0)
             {
-                GameManager.instance.EndGame();
+                GameManager.EndGame();
             }
             invulnerable = true;
         }

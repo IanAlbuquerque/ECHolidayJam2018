@@ -9,22 +9,11 @@ public class BossHealth : MonoBehaviour
     public float maxHp;
     public GameObject bossHealthBar;
 
-    //===========Singleton stuff===========
-    public static BossHealth Instance { get; private set; }
+    public GameManager GameManager;
 
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-
-        Instance = this;
-        BossHealth.onAwake.trigger();
+    public void Start() {
+        this.GameManager = (GameManager) FindObjectsOfType(typeof(GameManager))[0];
     }
-
-    public static Obs onAwake = new Obs();
-    //==========End singleton stuff==========
 
     // Reduces the health by "amount"
     public AudioSource enemyHit;
@@ -36,7 +25,7 @@ public class BossHealth : MonoBehaviour
 
         if (hp <= 0)
         { 
-            GameManager.instance.DefeatBoss();
+            GameManager.DefeatBoss();
 
             hp = maxHp;
         }
