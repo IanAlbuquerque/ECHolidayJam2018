@@ -144,6 +144,7 @@ MonoBehaviour:
   projectileSpeed: 1
   numDirections: 10
   timeElapsed: 0
+  jbShoot: {fileID: 993737324095766291}
 --- !u!114 &1879061928301779257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +164,7 @@ MonoBehaviour:
   projectileSpeed: 1.5
   numDirections: 14
   timeElapsed: 0
+  jbShoot: {fileID: 993737324095766291}
 --- !u!95 &3157898478559505415
 Animator:
   serializedVersion: 3
@@ -202,6 +204,7 @@ MonoBehaviour:
   numDirections: 3
   timeElapsed: 0
   angleRandomRange: 5
+  jbShoot: {fileID: 993737324095766291}
 --- !u!114 &4594448650389483295
 MonoBehaviour:
   m_ObjectHideFlags: 0

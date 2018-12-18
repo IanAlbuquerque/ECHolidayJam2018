@@ -25,9 +25,11 @@ public class JohnnyBravoFlowerStanding : MonoBehaviour, EnemyAttackPattern
         this.isRunning = false;
     }
 
+    public AudioSource jbShoot;
     private void shoot() {
         float step = 2 * Mathf.PI / this.numDirections / 4.0f;
-        for(float i = 0; i < this.numDirections; i += 1) {
+        jbShoot.Play();
+        for (float i = 0; i < this.numDirections; i += 1) {
             float currentStep = i * step + (3 * Mathf.PI / 4.0f);
             GameObject projectile = Instantiate(this.directionalProjectilePrefab, this.transform.position, this.transform.rotation);
             DirectionalProjectile directionalProjectile = projectile.GetComponent<DirectionalProjectile>();

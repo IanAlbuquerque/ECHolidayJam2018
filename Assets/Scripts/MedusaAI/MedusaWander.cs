@@ -28,7 +28,9 @@ public class MedusaWander : MonoBehaviour, EnemyAttackPattern
         this.isRunning = false;
     }
 
+    public AudioSource mShoot;
     private void shoot() {
+        mShoot.Play();
         Vector3 playerPosition3D = GameObject.FindGameObjectsWithTag("Player")[0].transform.position;
         Vector2 playerPosition2D = new Vector2(playerPosition3D.x, playerPosition3D.y);
         Vector2 enemyPosition2D = new Vector2(this.transform.position.x, this.transform.position.y);

@@ -17,8 +17,8 @@ public class Gifts : MonoBehaviour
     public enum Debuffs {
         lessLife,
         lessSpeed,
-        takeMoreDamage,
-        newEnemy
+        lessFireRate
+        //newEnemy
     }
 
     public List<Button> choiceButtons;
@@ -63,6 +63,9 @@ public class Gifts : MonoBehaviour
             case Buffs.moreSpeed:
                 buffStr = "Increase your speed";
                 break;
+            case Buffs.dealMoreDamage:
+                buffStr = "Deals more damage";
+                break;
             default:
                 Debug.LogError("Buff inválido");
                 buffStr = "";
@@ -76,8 +79,8 @@ public class Gifts : MonoBehaviour
             case Debuffs.lessSpeed:
                 debuffStr = "decrease your speed";
                 break;
-            case Debuffs.newEnemy:
-                debuffStr = "a new enemy appears";
+            case Debuffs.lessFireRate:
+                debuffStr = "decrease your firerate";
                 break;
             default:
                 Debug.LogError("Debuff inválido");
@@ -128,6 +131,9 @@ public class Gifts : MonoBehaviour
             case Buffs.moreSpeed:
                 PlayerMovement.Instance.IncreaseSpeed();
                 break;
+            case Buffs.dealMoreDamage:
+                PlayerShooting.instance.damage += 0.5f;
+                break;
             default:
                 Debug.LogError("Buff inválido");
                 break;
@@ -147,8 +153,8 @@ public class Gifts : MonoBehaviour
             case Debuffs.lessSpeed:
                 PlayerMovement.Instance.DecreaseSpeed();
                 break;
-            case Debuffs.newEnemy:
-                Debug.Log("TODO: acrescentar novo inimigo");
+            case Debuffs.lessFireRate:
+                PlayerShooting.instance.fireRate += 0.1f;
                 break;
             default:
                 Debug.LogError("Debuff inválido");
@@ -170,6 +176,7 @@ public class Gifts : MonoBehaviour
     }
 
     public void OnEnable(){
+        Debug.Log("More choices!");
         GenerateChoices();
     }
 }

@@ -27,8 +27,10 @@ public class BossHealth : MonoBehaviour
     //==========End singleton stuff==========
 
     // Reduces the health by "amount"
+    public AudioSource enemyHit;
     public void ReduceHealth(float amount)
     {
+        enemyHit.Play();
         hp -= amount;
         bossHealthBar.transform.GetChild(1).GetComponent<Image>().fillAmount = hp / maxHp;
 

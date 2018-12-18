@@ -8883,6 +8883,11 @@ PrefabInstance:
       propertyPath: maxHp
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 366892931581869305, guid: 3c176a487b1bd1e4189f45f79c36c710,
+        type: 3}
+      propertyPath: playerHit
+      value: 
+      objectReference: {fileID: 1851950702}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c176a487b1bd1e4189f45f79c36c710, type: 3}
 --- !u!1001 &7093792450386608254
