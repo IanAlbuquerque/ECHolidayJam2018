@@ -56,7 +56,7 @@ public class MedusaController : MonoBehaviour
             this.patterns = new List<EnemyAttackPattern>();
             this.durations = new List<float>();
             this.patterns.Add(this.GetComponent<MedusaFirework>());
-            this.durations.Add(15.0f);
+            this.durations.Add(10.0f);
             MedusaFirework fireworkScript = this.GetComponent<MedusaFirework>();
             fireworkScript.shootCooldown *= 0.7f;
             this.patterns.Add(this.GetComponent<MedusaWanderWithGas>());
