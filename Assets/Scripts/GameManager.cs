@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public int currentBoss = 0; // The current boss' index
     private readonly string[] bosses = { "johnny_bravo", "centaur", "medusa" }; // Array with all the bosses' names 
                                                                                    //in order of progression
-    private readonly float[] bossHPs = { 20, 20, 20 };   // The respective HP for each boss
+    private readonly float[] bossHPs = { 200, 200, 200 };   // The respective HP for each boss
 
     public PlayerHealth PlayerHealth;
 
