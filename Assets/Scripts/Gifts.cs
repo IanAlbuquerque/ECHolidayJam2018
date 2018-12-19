@@ -71,7 +71,7 @@ public class Gifts : MonoBehaviour
 
         switch(buff){
             case Buffs.moreLife:
-                buffStr = "more lives";
+                buffStr = "starting with one more life";
                 break;
             case Buffs.moreSpeed:
                 buffStr = "faster movement speed";
@@ -87,7 +87,7 @@ public class Gifts : MonoBehaviour
 
         switch(debuff){
             case Debuffs.lessLife:
-                debuffStr = "Sacrifice lives";
+                debuffStr = "Start with one less life";
                 break;
             case Debuffs.lessSpeed:
                 debuffStr = "Sacrifice movement speed";
@@ -109,11 +109,23 @@ public class Gifts : MonoBehaviour
     /// </summary>
     public void GenerateChoices(){
         //define buffs e debuffs
-        foreach(Button btn in choiceButtons){
+        for(int i=0; i<this.choiceButtons.Count; i++){
+            Button btn = this.choiceButtons[i];
             //regera buffs e debuffs até que eles não sejam incompatíveis
             while(true){
                 Buffs buff = RandomizeBuff();
                 Debuffs debuff = RandomizeDebuff();
+
+                bool isRepeated = false;
+                for(int j=0; j<i; j++) {
+                    if(this.choiceBuffs[this.choiceButtons[j]] == buff && this.choiceDebuffs[this.choiceButtons[j]] == debuff) {
+                        isRepeated = true;
+                        break;
+                    }
+                }
+                if(isRepeated) {
+                    continue;
+                }
 
                 //checa se buff e debuff são incompatíveis
                 if(!(
