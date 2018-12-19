@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2642395233188111493}
   m_Layer: 0
   m_Name: medusa_directional_projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,5 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0c869874d263d46b1ed5a31173bc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldFlip: 1
   direction: {x: 0, y: 0}
   speed: 0
+  PlayerHealth: {fileID: 0}

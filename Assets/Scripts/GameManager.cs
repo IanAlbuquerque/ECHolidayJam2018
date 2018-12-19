@@ -41,6 +41,11 @@ public class GameManager : MonoBehaviour
         currentBoss++;
         Destroy(bossInstance);
 
+        GameObject[] leftOverProjectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        for(int i=0; i<leftOverProjectiles.Length; i++) {
+            Destroy(leftOverProjectiles[i]);
+        }
+
         // The game has finished
         if (currentBoss == 3)
         {

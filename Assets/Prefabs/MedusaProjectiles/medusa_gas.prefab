@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3948188424437747431}
   m_Layer: 0
   m_Name: medusa_gas
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +155,7 @@ MonoBehaviour:
   shouldFlip: 0
   direction: {x: 0, y: 0}
   speed: 0
+  PlayerHealth: {fileID: 0}
 --- !u!82 &3948188424437747431
 AudioSource:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6207945982597933300}
   m_Layer: 0
   m_Name: medusa_firework_base_projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   explosionDuration: 2
   explosionChildCooldown: 0.1
   numDirections: 10
+  PlayerHealth: {fileID: 0}
   mFirework: {fileID: 6207945982597933300}
 --- !u!82 &6207945982597933300
 AudioSource:

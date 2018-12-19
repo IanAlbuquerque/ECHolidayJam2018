@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2642395233188111493}
   m_Layer: 0
   m_Name: johnny_bravo_projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,3 +154,4 @@ MonoBehaviour:
   shouldFlip: 1
   direction: {x: 0, y: 0}
   speed: 0
+  PlayerHealth: {fileID: 0}

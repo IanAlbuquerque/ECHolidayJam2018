@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 120076991232436230}
   m_Layer: 0
   m_Name: centaur_axe_boomerang
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   orthogonalSpeed: 0
   acceleration: 0
   speed: 0
+  PlayerHealth: {fileID: 0}
 --- !u!82 &120076991232436230
 AudioSource:
   m_ObjectHideFlags: 0
